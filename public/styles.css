@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #1DB954;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  button:hover {
+    background-color: #1aa34a;
+  }
+  
+  #profile {
+    margin-top: 20px;
+  }
+  
+  .playlist {
+    display: flex; /* Use flexbox for horizontal layout */
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px; /* Add padding for space between playlists */
+    background-color: #ffffff; /* Background color for each playlist */
+    border-radius: 8px; /* Rounded corners for each playlist */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Shadow for each playlist */
+    width: 100%; /* Make each playlist take full width */
+    max-width: 400px; /* Limit max width for better layout */
+  }
+  .playlist img {
+    margin-right: 10px;
+    flex: 0 0 auto; /* Fix image size */
+    max-width: 80px; /* Limit max width for images */
+    height: auto; /* Maintain aspect ratio */
+  }
