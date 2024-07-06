@@ -160,3 +160,24 @@ button:hover {
   text-decoration: underline;
 }
 
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #1DB954;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 5px; /* Added margin for better spacing */
+}
+
+button:hover {
+  background-color: #1aa34a;
+}
+
+#logout {
+  background-color: rgb(126, 2, 2); /* Red background for the logout button */
+}
+
+#logout:hover {
+  background-color: darkred; /* Darker red on hover */
+}

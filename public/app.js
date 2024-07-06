@@ -5,6 +5,8 @@ document.getElementById('fetchProfile').addEventListener('click', async () => {
   
   if (access_token) {
     try {
+      document.getElementById('fetchProfile').textContent = 'Generate a Playlist!';
+      document.getElementById('fetchProfile').addEventListener('click', generatePlaylist);
       console.log('Fetching profile');
       const profileResponse = await fetch(`/profile?access_token=${access_token}`);
       const profile = await profileResponse.json();
@@ -28,6 +30,11 @@ document.getElementById('fetchProfile').addEventListener('click', async () => {
       const topArtists = await topArtistsResponse.json();
       console.log('Top artists fetched:', topArtists);
       displayTopArtists(topArtists);
+
+      // document.getElementById('description').style.display = 'none';
+      // document.getElementById('fetchProfile').textContent = 'Generate Playlist';
+      // document.getElementById('fetchProfile').addEventListener('click', generatePlaylist);
+      showLogoutButton(); // show logout button after fetching data
     } catch (error) {
       console.error('Error fetching data:', error);
       document.getElementById('profile').innerText = 'Error fetching profile, playlists, top tracks, or top artists';
@@ -110,5 +117,42 @@ function displayTopArtists(topArtists) {
         </div>
       `;
     });
+  }
+}
+
+function generatePlaylist() {
+  console.log('Generating playlist...');
+  // generate playlist logic 
+}
+
+// function showLogoutButton() {
+//   if (!document.getElementById('logout')) {
+//     const logoutButton = document.createElement('button');
+//     logoutButton.id = 'logout';
+//     logoutButton.textContent = 'Logout';
+//     logoutButton.addEventListener('click', () => {
+//       localStorage.removeItem('access_token');
+//       window.location = '/login';
+//     });
+//     document.body.appendChild(logoutButton);
+//   }
+// }
+
+function showLogoutButton() {
+  if (!document.getElementById('logout')) {
+    const container = document.querySelector('.container');
+    const logoutButton = document.createElement('button');
+    logoutButton.id = 'logout';
+    logoutButton.textContent = 'Logout';
+    logoutButton.style.position = 'absolute';
+    logoutButton.style.top = '10px';
+    logoutButton.style.left = '10px';
+    logoutButton.addEventListener('click', () => {
+      localStorage.removeItem('access_token');
+      fetch('/logout').then(() => {
+        window.location = '/login';
+      });
+    });
+    container.appendChild(logoutButton);
   }
 }
