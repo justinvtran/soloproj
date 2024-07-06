@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     display: flex;
@@ -42,19 +42,121 @@ body {
   }
   
   .playlist {
-    display: flex; /* Use flexbox for horizontal layout */
+    display: flex; 
     align-items: center;
     margin: 10px 0;
-    padding: 10px; /* Add padding for space between playlists */
-    background-color: #ffffff; /* Background color for each playlist */
-    border-radius: 8px; /* Rounded corners for each playlist */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Shadow for each playlist */
-    width: 100%; /* Make each playlist take full width */
-    max-width: 400px; /* Limit max width for better layout */
+    padding: 10px; 
+    background-color: #ffffff; 
+    border-radius: 8px; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+    width: 100%; 
+    max-width: 400px; 
   }
   .playlist img {
     margin-right: 10px;
-    flex: 0 0 auto; /* Fix image size */
-    max-width: 80px; /* Limit max width for images */
-    height: auto; /* Maintain aspect ratio */
+    flex: 0 0 auto; 
+    max-width: 80px; 
+    height: auto; 
   }
+ */
+
+ body {
+  font-family: Arial, sans-serif;
+  background: url('/AdobeStock_734956504.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #fff; /* Ensure text is visible against the background */
+}
+
+.container {
+  background-color: rgba(54, 53, 53, 0.9); /* Make container semi-transparent */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+input {
+  padding: 10px;
+  margin: 10px 0;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #1DB954;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #1aa34a;
+}
+
+#profile {
+  margin-top: 20px;
+}
+
+#profile img {
+  border-radius: 50%;
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+#profile h2 {
+  margin: 10px 0 5px 0;
+}
+
+#profile p {
+  margin: 5px 0;
+}
+
+#playlists, #topTracks, #topArtists {
+  margin-top: 20px;
+  max-height: 200px; /* Set the max height for scrollable content */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.playlist, .track, .artist {
+  display: flex; 
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px; 
+  background-color: rgba(145, 145, 145, 0.9); /* Make item background semi-transparent */
+  border-radius: 8px; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+  width: 100%; 
+  max-width: 400px; 
+  text-align: left;
+}
+
+.playlist img, .track img, .artist img {
+  margin-right: 10px;
+  flex: 0 0 auto; 
+  max-width: 80px; 
+  height: auto; 
+}
+
+.playlist p, .track p, .artist p {
+  margin: 0;
+}
+
+.playlist a, .track a, .artist a {
+  color: #1DB954;
+  text-decoration: none;
+}
+
+.playlist a:hover, .track a:hover, .artist a:hover {
+  text-decoration: underline;
+}
+
